@@ -1,27 +1,22 @@
-/* =============================================================================
-   Arubic — Navbar.css  (pixel-perfect match)
-   ============================================================================= */
 
-/* ── CSS Variables ─────────────────────────────────────────────────────────── */
 :root {
-  --arb-cyan:        #00bcd4;   /* "A" in logo + active nav link */
-  --arb-dark:        #1a1a1a;   /* logo text, nav links          */
-  --arb-gray-text:   #555555;   /* topbar text                   */
-  --arb-border:      #e8e8e8;   /* all hairline borders          */
-  --arb-topbar-bg:   #ffffff;   /* topbar is white               */
+  --arb-cyan:        #00bcd4;   
+  --arb-dark:        #1a1a1a;  
+  --arb-gray-text:   #555555;   
+  --arb-border:      #e8e8e8;   
+  --arb-topbar-bg:   #ffffff; 
   --arb-navbar-bg:   #ffffff;
-  --arb-mega-bg:     #222222;   /* dark mega-menu background     */
+  --arb-mega-bg:     #222222;   
   --arb-mega-head:   #ffffff;
   --arb-mega-item:   #aaaaaa;
   --arb-mega-hover:  #ffffff;
   --arb-drop-bg:     #ffffff;
   --arb-drop-hover:  #00bcd4;
   --arb-topbar-h:    44px;
-  --arb-navbar-h:    80px;
+  --arb-navbar-h:    110px;
   --ease:            0.22s ease;
 }
 
-/* ── Reset / Base ──────────────────────────────────────────────────────────── */
 *,
 *::before,
 *::after {
@@ -39,25 +34,24 @@ ul {
   list-style: none;
 }
 
-/* ── Container ─────────────────────────────────────────────────────────────── */
 .arb-container {
   max-width: 1260px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
-/* =============================================================================
-   TOP BAR
-   ============================================================================= */
-.arb-topbar {
+
+/* TOP BAR */
+
+   .arb-topbar {
   height: var(--arb-topbar-h);
   background: var(--arb-topbar-bg);
   border-bottom: 1px solid var(--arb-border);
-  
+
   font-size: 13px;
   color: var(--arb-gray-text);
   transition: height var(--ease), opacity var(--ease);
-  overflow: hidden;
+
 }
 
 .arb-topbar--hidden {
@@ -106,7 +100,7 @@ ul {
   gap: 4px;
 }
 
-/* ── Topbar Dropdown ───────────────────────────────────────────────────────── */
+/* ── Topbar Dropdown ──────── */
 .arb-tb-drop {
   position: relative;
 }
@@ -165,7 +159,8 @@ ul {
   background: #f7f7f7;
 }
 
-/* ── Caret SVG ─────────────────────────────────────────────────────────────── */
+
+
 .arb-caret {
   width: 10px;
   height: 6px;
@@ -178,15 +173,12 @@ ul {
   height: 5px;
 }
 
-/* =============================================================================
-   MAIN NAVBAR
-   ============================================================================= */
+   /* MAIN NAVBAR */
 .arb-navbar {
   position: relative;
   background: var(--arb-navbar-bg);
   border-bottom: 1px solid var(--arb-border);
   z-index: 1;
-  /* display: ; */
 }
 
 .arb-navbar--sticky {
@@ -210,7 +202,6 @@ ul {
   gap: 40px;
 }
 
-/* ── Logo ──────────────────────────────────────────────────────────────────── */
 .arb-logo {
   flex-shrink: 0;
   text-decoration: none;
@@ -239,7 +230,6 @@ ul {
   font-family: Arial, sans-serif;
 }
 
-/* ── Desktop Nav ───────────────────────────────────────────────────────────── */
 .arb-nav--desktop {
   display: flex;
   align-items: center;
@@ -286,11 +276,11 @@ ul {
   flex-shrink: 0;
 }
 
-/* ── Simple Dropdown ───────────────────────────────────────────────────────── */
+/* ── Simple Dropdown ─────────── */
 .arb-dropdown {
   position: absolute;
   top: 100%;
-  left: 0;
+  left: 21%;
   background: var(--arb-drop-bg);
   border-top: 2px solid var(--arb-cyan);
   border: 1px solid var(--arb-border);
@@ -325,12 +315,12 @@ ul {
   padding-left: 24px;
 }
 
-/* ── Mega Menu ─────────────────────────────────────────────────────────────── */
+/* ── Mega Menu ────────── */
 .arb-mega {
   position: fixed;
   left: 0;
   right: 0;
-  top: var(--arb-navbar-h);
+  top: 155px;
   background: var(--arb-mega-bg);
   z-index: 9998;
   display: flex;
@@ -349,7 +339,6 @@ ul {
   pointer-events: auto;
 }
 
-/* Inner columns — centered same as container */
 .arb-mega {
   justify-content: center;
 }
@@ -384,15 +373,12 @@ ul {
   color: var(--arb-mega-hover);
 }
 
-/* Sticky adjustment — mega should sit below sticky bar */
 .arb-navbar--sticky ~ * .arb-mega,
 .arb-navbar--sticky .arb-mega {
   top: var(--arb-navbar-h);
 }
 
-/* =============================================================================
-   RIGHT ICONS
-   ============================================================================= */
+
 .arb-navbar__icons {
   display: flex;
   align-items: center;

@@ -2,7 +2,6 @@ import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../assets/css/Navbar.css";
 
-/* ─── Nav Data ─────────────────────────────────────────────────────────────── */
 const navItems = [
   {
     label: "HOME",
@@ -26,7 +25,7 @@ const navItems = [
         heading: "SHOES",
         items: ["Athletic", "Boots", "Comfort", "Fashion Sneakers"],
       },
-      
+
       {
         heading: "HANDBAGS",
         items: ["Backpack", "Shoulder Bags", "Mini Bags", "Bucket Bags"],
@@ -103,7 +102,6 @@ const cartData = [
   },
 ];
 
-/* ─── Component ────────────────────────────────────────────────────────────── */
 export default function Navbar() {
   const [activeMenu, setActiveMenu] = useState(null);
   const [cartOpen, setCartOpen] = useState(false);
@@ -122,7 +120,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close cart on outside click
   useEffect(() => {
     const handler = (e) => {
       if (cartRef.current && !cartRef.current.contains(e.target)) setCartOpen(false);
@@ -214,7 +211,6 @@ export default function Navbar() {
                   )}
                 </Link>
 
-                {/* Separator line after each item except last */}
                 {idx < navItems.length - 1 && (
                   <span className="arb-nav__sep" />
                 )}
@@ -251,9 +247,8 @@ export default function Navbar() {
             ))}
           </ul>
 
-          {/* Right icons */}
           <div className="arb-navbar__icons">
-            {/* Search */}
+
             <div className="arb-search-wrap" ref={searchRef}>
               <button
                 className="arb-icon-btn"
@@ -332,7 +327,7 @@ export default function Navbar() {
               )}
             </div>
 
-            {/* Hamburger (mobile) */}
+
             <button
               className={`arb-hamburger arb-nav--mobile-only ${mobileOpen ? "arb-hamburger--open" : ""}`}
               onClick={() => setMobileOpen((p) => !p)}
@@ -344,7 +339,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* ── MOBILE DRAWER ─────────────────────────────────────────────────── */}
+
       {mobileOpen && (
         <div className="arb-mobile-overlay" onClick={() => setMobileOpen(false)} />
       )}
@@ -405,13 +400,13 @@ export default function Navbar() {
         </ul>
       </div>
 
-      {/* Spacer so page content doesn't hide under navbar */}
+
       <div className="arb-spacer" />
     </>
   );
 }
 
-/* ─── TopBar Dropdown Helper ───────────────────────────────────────────────── */
+
 function TopBarDropdown({ label, children }) {
   return (
     <div className="arb-tb-drop">
