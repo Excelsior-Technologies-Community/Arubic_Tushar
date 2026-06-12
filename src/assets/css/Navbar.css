@@ -1,0 +1,784 @@
+/* =============================================================================
+   Arubic — Navbar.css  (pixel-perfect match)
+   ============================================================================= */
+
+/* ── CSS Variables ─────────────────────────────────────────────────────────── */
+:root {
+  --arb-cyan:        #00bcd4;   /* "A" in logo + active nav link */
+  --arb-dark:        #1a1a1a;   /* logo text, nav links          */
+  --arb-gray-text:   #555555;   /* topbar text                   */
+  --arb-border:      #e8e8e8;   /* all hairline borders          */
+  --arb-topbar-bg:   #ffffff;   /* topbar is white               */
+  --arb-navbar-bg:   #ffffff;
+  --arb-mega-bg:     #222222;   /* dark mega-menu background     */
+  --arb-mega-head:   #ffffff;
+  --arb-mega-item:   #aaaaaa;
+  --arb-mega-hover:  #ffffff;
+  --arb-drop-bg:     #ffffff;
+  --arb-drop-hover:  #00bcd4;
+  --arb-topbar-h:    44px;
+  --arb-navbar-h:    80px;
+  --ease:            0.22s ease;
+}
+
+/* ── Reset / Base ──────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ── Container ─────────────────────────────────────────────────────────────── */
+.arb-container {
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* =============================================================================
+   TOP BAR
+   ============================================================================= */
+.arb-topbar {
+  height: var(--arb-topbar-h);
+  background: var(--arb-topbar-bg);
+  border-bottom: 1px solid var(--arb-border);
+  
+  font-size: 13px;
+  color: var(--arb-gray-text);
+  transition: height var(--ease), opacity var(--ease);
+  overflow: hidden;
+}
+
+.arb-topbar--hidden {
+  height: 0;
+  opacity: 0;
+}
+
+.arb-topbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.arb-topbar__left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: var(--arb-gray-text);
+  font-size: 13px;
+}
+
+.arb-topbar__left strong {
+  font-weight: 600;
+  color: #333;
+}
+
+.arb-topbar__left a {
+  color: var(--arb-gray-text);
+  transition: color var(--ease);
+}
+
+.arb-topbar__left a:hover {
+  color: var(--arb-cyan);
+}
+
+.arb-topbar__divider {
+  width: 1px;
+  height: 14px;
+  background: var(--arb-border);
+}
+
+.arb-topbar__right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ── Topbar Dropdown ───────────────────────────────────────────────────────── */
+.arb-tb-drop {
+  position: relative;
+}
+
+.arb-tb-drop__btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  color: #333;
+  padding: 6px 12px;
+  font-family: inherit;
+  transition: color var(--ease);
+}
+
+.arb-tb-drop__btn:hover {
+  color: var(--arb-cyan);
+}
+
+.arb-tb-drop__menu {
+  position: absolute;
+  top: calc(100% + 2px);
+  right: 0;
+  background: var(--arb-drop-bg);
+  border: 1px solid var(--arb-border);
+  border-top: 2px solid var(--arb-cyan);
+  min-width: 150px;
+  z-index: 9999;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity var(--ease), transform var(--ease), visibility var(--ease);
+}
+
+.arb-tb-drop:hover .arb-tb-drop__menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+
+}
+
+.arb-tb-drop__menu a {
+  display: block;
+  padding: 9px 16px;
+  font-size: 13px;
+  color: #444;
+  transition: color var(--ease), background var(--ease);
+}
+
+.arb-tb-drop__menu a:hover {
+  color: var(--arb-cyan);
+  background: #f7f7f7;
+}
+
+/* ── Caret SVG ─────────────────────────────────────────────────────────────── */
+.arb-caret {
+  width: 10px;
+  height: 6px;
+  flex-shrink: 0;
+  color: inherit;
+}
+
+.arb-caret--sm {
+  width: 8px;
+  height: 5px;
+}
+
+/* =============================================================================
+   MAIN NAVBAR
+   ============================================================================= */
+.arb-navbar {
+  position: relative;
+  background: var(--arb-navbar-bg);
+  border-bottom: 1px solid var(--arb-border);
+  z-index: 1;
+  /* display: ; */
+}
+
+.arb-navbar--sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  animation: arbSlideDown 0.28s ease;
+}
+
+@keyframes arbSlideDown {
+  from { transform: translateY(-100%); }
+  to   { transform: translateY(0); }
+}
+
+.arb-navbar__inner {
+  display: flex;
+  align-items: center;
+  height: var(--arb-navbar-h);
+  gap: 40px;
+}
+
+/* ── Logo ──────────────────────────────────────────────────────────────────── */
+.arb-logo {
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.arb-logo__text {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--arb-dark);
+  letter-spacing: 1px;
+  line-height: 1;
+  font-family: "Arial Black", Arial, sans-serif;
+  text-transform: uppercase;
+}
+
+.arb-logo__a {
+  color: var(--arb-cyan);
+}
+
+.arb-logo__sub {
+  font-size: 10.5px;
+  color: #aaa;
+  letter-spacing: 0.3px;
+  margin-top: 2px;
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+}
+
+/* ── Desktop Nav ───────────────────────────────────────────────────────────── */
+.arb-nav--desktop {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  height: 100%;
+  gap: 0;
+}
+
+.arb-nav__item {
+  position: static;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.arb-nav__link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 14px;
+  height: 100%;
+  font-size: 13px;
+  font-weight: 700;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  white-space: nowrap;
+  position: relative;
+  transition: color var(--ease);
+  font-family: Arial, sans-serif;
+}
+
+.arb-nav__link--active,
+.arb-nav__item:hover .arb-nav__link {
+  color: var(--arb-cyan);
+}
+
+/* Horizontal separator between menu items */
+.arb-nav__sep {
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: #cccccc;
+  flex-shrink: 0;
+}
+
+/* ── Simple Dropdown ───────────────────────────────────────────────────────── */
+.arb-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--arb-drop-bg);
+  border-top: 2px solid var(--arb-cyan);
+  border: 1px solid var(--arb-border);
+  border-top: 2px solid var(--arb-cyan);
+  min-width: 200px;
+  z-index: 9999;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.09);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity var(--ease), transform var(--ease), visibility var(--ease);
+  pointer-events: none;
+}
+
+.arb-dropdown--open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.arb-dropdown li a {
+  display: block;
+  padding: 10px 18px;
+  font-size: 13px;
+  color: #444;
+  transition: color var(--ease), padding-left var(--ease);
+}
+
+.arb-dropdown li a:hover {
+  color: var(--arb-cyan);
+  padding-left: 24px;
+}
+
+/* ── Mega Menu ─────────────────────────────────────────────────────────────── */
+.arb-mega {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: var(--arb-navbar-h);
+  background: var(--arb-mega-bg);
+  z-index: 9998;
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity var(--ease), transform var(--ease), visibility var(--ease);
+  pointer-events: none;
+  padding: 36px 0;
+}
+
+.arb-mega--open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Inner columns — centered same as container */
+.arb-mega {
+  justify-content: center;
+}
+
+.arb-mega__col {
+  width: 200px;
+  padding: 0 30px;
+}
+
+.arb-mega__heading {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--arb-mega-head);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  font-family: Arial, sans-serif;
+}
+
+.arb-mega__list li {
+  margin-bottom: 10px;
+}
+
+.arb-mega__list li a {
+  font-size: 13.5px;
+  color: var(--arb-mega-item);
+  transition: color var(--ease);
+  font-family: Arial, sans-serif;
+}
+
+.arb-mega__list li a:hover {
+  color: var(--arb-mega-hover);
+}
+
+/* Sticky adjustment — mega should sit below sticky bar */
+.arb-navbar--sticky ~ * .arb-mega,
+.arb-navbar--sticky .arb-mega {
+  top: var(--arb-navbar-h);
+}
+
+/* =============================================================================
+   RIGHT ICONS
+   ============================================================================= */
+.arb-navbar__icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.arb-icon-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  transition: color var(--ease);
+  position: relative;
+}
+
+.arb-icon-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.arb-icon-btn:hover {
+  color: var(--arb-cyan);
+}
+
+/* ── Cart badge ────────────────────────────────────────────────────────────── */
+.arb-cart-btn {
+  position: relative;
+}
+
+.arb-cart-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--arb-cyan);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* ── Search box ────────────────────────────────────────────────────────────── */
+.arb-search-wrap {
+  position: relative;
+}
+
+.arb-search-box {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 280px;
+  background: #fff;
+  border: 1px solid var(--arb-border);
+  border-top: 2px solid var(--arb-cyan);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  z-index: 9999;
+  animation: arbFade 0.18s ease;
+}
+
+.arb-search-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-family: inherit;
+  background: transparent;
+}
+
+.arb-search-box button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px 12px;
+  font-size: 13px;
+  color: #999;
+  transition: color var(--ease);
+}
+
+.arb-search-box button:hover {
+  color: var(--arb-cyan);
+}
+
+/* ── Cart dropdown ─────────────────────────────────────────────────────────── */
+.arb-cart-wrap {
+  position: relative;
+}
+
+.arb-cart-drop {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  width: 300px;
+  background: #fff;
+  border: 1px solid var(--arb-border);
+  border-top: 2px solid var(--arb-cyan);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  z-index: 9999;
+  animation: arbFade 0.18s ease;
+}
+
+@keyframes arbFade {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.arb-cart-drop__items {
+  padding: 16px;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.arb-cart-drop__row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding-bottom: 14px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--arb-border);
+}
+
+.arb-cart-drop__row:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.arb-cart-drop__row img {
+  width: 58px;
+  height: 66px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.arb-cart-drop__info {
+  display: flex;
+  gap: 8px;
+  flex: 1;
+}
+
+.arb-cart-drop__qty {
+  font-size: 12px;
+  font-weight: 700;
+  color: #333;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.arb-cart-drop__name {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 3px;
+  line-height: 1.3;
+}
+
+.arb-cart-drop__price {
+  font-size: 13px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 3px;
+}
+
+.arb-cart-drop__meta {
+  font-size: 11px;
+  color: #999;
+}
+
+.arb-cart-drop__remove {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 11px;
+  color: #bbb;
+  padding: 2px;
+  flex-shrink: 0;
+  transition: color var(--ease);
+  margin-top: 2px;
+}
+
+.arb-cart-drop__remove:hover {
+  color: #e00;
+}
+
+.arb-cart-drop__totals {
+  padding: 12px 16px;
+  background: #f9f9f9;
+  border-top: 1px solid var(--arb-border);
+}
+
+.arb-cart-drop__row-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12.5px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.arb-cart-drop__row-total--grand {
+  font-weight: 700;
+  font-size: 14px;
+  color: #222;
+  border-top: 1px solid var(--arb-border);
+  padding-top: 7px;
+  margin-top: 6px;
+  margin-bottom: 0;
+}
+
+.arb-cart-drop__checkout {
+  display: block;
+  text-align: center;
+  background: #222;
+  color: #fff;
+  padding: 13px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: background var(--ease);
+}
+
+.arb-cart-drop__checkout:hover {
+  background: var(--arb-cyan);
+}
+
+/* =============================================================================
+   SPACER
+   ============================================================================= */
+.arb-spacer {
+  height: calc(var(--arb-topbar-h) + var(--arb-navbar-h));
+}
+
+/* =============================================================================
+   MOBILE DRAWER
+   ============================================================================= */
+.arb-mobile-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 9997;
+}
+
+.arb-mobile-drawer {
+  position: fixed;
+  top: 0;
+  left: -110%;
+  width: 82%;
+  max-width: 300px;
+  height: 100dvh;
+  background: #fff;
+  z-index: 9998;
+  overflow-y: auto;
+  transition: left 0.3s ease;
+  box-shadow: 4px 0 24px rgba(0,0,0,0.14);
+}
+
+.arb-mobile-drawer--open {
+  left: 0;
+}
+
+.arb-mobile-list {
+  padding: 16px 0;
+}
+
+.arb-mobile-list__item {
+  border-bottom: 1px solid var(--arb-border);
+}
+
+.arb-mobile-list__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.arb-mobile-list__link {
+  display: block;
+  flex: 1;
+  padding: 14px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #333;
+  transition: color var(--ease);
+}
+
+.arb-mobile-list__link:hover {
+  color: var(--arb-cyan);
+}
+
+.arb-mobile-list__toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 14px 18px;
+  color: #999;
+  line-height: 1;
+}
+
+.arb-mobile-sub {
+  background: #f6f6f6;
+  border-top: 1px solid var(--arb-border);
+}
+
+.arb-mobile-sub li a {
+  display: block;
+  padding: 10px 30px;
+  font-size: 13px;
+  color: #555;
+  transition: color var(--ease);
+}
+
+.arb-mobile-sub li a:hover {
+  color: var(--arb-cyan);
+}
+
+.arb-mobile-mega {
+  background: #f6f6f6;
+  border-top: 1px solid var(--arb-border);
+  padding: 10px 20px;
+}
+
+.arb-mobile-mega__heading {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #222;
+  margin: 10px 0 6px;
+}
+
+/* ── Hamburger ─────────────────────────────────────────────────────────────── */
+.arb-hamburger {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.arb-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #333;
+  border-radius: 2px;
+  transition: all 0.28s ease;
+}
+
+.arb-hamburger--open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.arb-hamburger--open span:nth-child(2) { opacity: 0; }
+.arb-hamburger--open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* =============================================================================
+   RESPONSIVE
+   ============================================================================= */
+.arb-nav--mobile-only { display: none; }
+
+@media (max-width: 1024px) {
+  .arb-nav--desktop  { display: none; }
+  .arb-nav--mobile-only { display: flex; }
+}
+
+@media (max-width: 640px) {
+  .arb-topbar__left { display: none; }
+  .arb-topbar__right { margin-left: auto; }
+  .arb-spacer { height: calc(var(--arb-topbar-h) + var(--arb-navbar-h)); }
+}
+
+@media (max-width: 400px) {
+  .arb-topbar { display: none; }
+  .arb-spacer { height: var(--arb-navbar-h); }
+}
