@@ -143,7 +143,7 @@ export default function Navbar() {
 
   return (
     <>
-      {/* ── TOP BAR ───────────────────────────────────────────────────────── */}
+
       <div className={`arb-topbar ${scrolled ? "arb-topbar--hidden" : ""}`}>
         <div className="arb-container arb-topbar__inner">
           <div className="arb-topbar__left">
@@ -177,11 +177,11 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* ── MAIN NAVBAR ───────────────────────────────────────────────────── */}
+
       <nav className={`arb-navbar ${scrolled ? "arb-navbar--sticky" : ""}`}>
         <div className="arb-container arb-navbar__inner">
 
-          {/* Logo */}
+
           <Link to="/" className="arb-logo"> 
           
             <div className="arb-logo__text">
@@ -190,7 +190,7 @@ export default function Navbar() {
             <div className="arb-logo__sub">Online store template</div>
           </Link>
 
-          {/* Desktop menu */}
+
           <ul className="arb-nav arb-nav--desktop">
             {navItems.map((item, idx) => (
               <li
@@ -401,7 +401,7 @@ export default function Navbar() {
       </div>
 
 
-      <div className="arb-spacer" />
+      
     </>
   );
 }
@@ -421,4 +421,4 @@ function TopBarDropdown({ label, children }) {
       </div>
     </div>
   );
-}
+} 
