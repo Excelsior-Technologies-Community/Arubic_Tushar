@@ -3,6 +3,7 @@ import HeroSection from "./components/HeroSection";
 import AdminLayout from "./admin/layout/AdminLayout";
 import Dashboard from "./admin/pages/Dashboard";
 import Services from "./admin/pages/Services";
+import FeaturedProducts from "./components/FeaturedProducts";
 
 
 
@@ -15,6 +16,7 @@ function HomePage() {
     <>
       <Navbar />
       <HeroSection />
+      <FeaturedProducts />
     </>
   )
 }
