@@ -1,0 +1,111 @@
+.apf-wrapper {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.apf-heading {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #222;
+  text-align: center;
+}
+
+.apf-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.apf-row {
+  display: flex;
+  gap: 16px;
+}
+
+.apf-row .apf-field {
+  flex: 1;
+}
+
+.apf-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.apf-field label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #444;
+}
+
+.apf-field input[type="text"],
+.apf-field input[type="number"] {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.apf-field input[type="text"]:focus,
+.apf-field input[type="number"]:focus {
+  outline: none;
+  border-color: #2d8cf0;
+}
+
+.apf-field input[type="file"] {
+  font-size: 13px;
+}
+
+.apf-checkbox label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.apf-preview {
+  margin-top: 8px;
+  width: 100%;
+  max-height: 140px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #eee;
+}
+
+.apf-submit {
+  padding: 12px;
+  background-color: #222;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.apf-submit:hover {
+  background-color: #444;
+}
+
+.apf-submit:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+.apf-message {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.apf-success {
+  color: #2ecc71;
+}
+
+.apf-error {
+  color: #e74c3c;
+}

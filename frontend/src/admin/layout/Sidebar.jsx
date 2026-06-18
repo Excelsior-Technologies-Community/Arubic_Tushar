@@ -4,6 +4,7 @@ export default function Sidebar() {
   const menu = [
     { name: "Dashboard", path: "/admin/dashboard" },
     { name: "Services", path: "/admin/services" },
+    { name: "Products", path: "/admin/products" },
     { name: "Team", path: "/admin/team" },
     { name: "Blogs", path: "/admin/blogs" },
     { name: "Messages", path: "/admin/messages" },
@@ -13,8 +14,7 @@ export default function Sidebar() {
   return (
     <aside className="sidebar">
       <div className="logo">
-
-      <h2 className="admin-logo"><span className="arb-logo__a">A</span>RUBIC</h2>
+        <h2 className="admin-logo"><span className="arb-logo__a">A</span>RUBIC</h2>
         <div className="arb-logo__sub">Online store template</div>
       </div>
 

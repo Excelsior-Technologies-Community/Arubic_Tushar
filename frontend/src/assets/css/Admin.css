@@ -75,10 +75,421 @@
   width:100%;
   background:white;
   border-collapse:collapse;
+  border-radius:12px;
+  overflow:hidden;
 }
 
 .admin-table th,
 .admin-table td{
   padding:15px;
   border-bottom:1px solid #eee;
+  text-align:left;
+}
+
+.admin-table th{
+  background:#f9fafb;
+  color:#6b7280;
+  font-size:13px;
+  text-transform:uppercase;
+  letter-spacing:0.5px;
+}
+
+.admin-table tbody tr:hover{
+  background:#f9fafb;
+}
+
+/* Add buttons (Add Service / Add Product / Edit / Delete) */
+.btn-add{
+  display:inline-block;
+  background:#2563eb;
+  color:#fff;
+  border:none;
+  padding:10px 18px;
+  border-radius:8px;
+  font-size:14px;
+  cursor:pointer;
+  text-decoration:none;
+  margin-bottom:20px;
+  transition:background .2s ease;
+}
+
+.btn-add:hover{
+  background:#1d4ed8;
+}
+
+/* Sidebar logo sub-text */
+.arb-logo__a{
+  color:#2563eb;
+}
+
+.arb-logo__sub{
+  font-size:12px;
+  color:#94a3b8;
+  font-weight:normal;
+  margin-bottom:25px;
+}
+
+/* Header search */
+.arb-search-wrap{
+  position:relative;
+  margin-right:auto;
+}
+
+.arb-icon-btn{
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  border:none;
+  background:#f4f6f9;
+  color:#374151;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+
+.arb-icon-btn svg{
+  width:18px;
+  height:18px;
+}
+
+.arb-search-box{
+  position:absolute;
+  top:48px;
+  left:0;
+  background:#fff;
+  border-radius:8px;
+  box-shadow:0 4px 16px rgba(0,0,0,.12);
+  display:flex;
+  align-items:center;
+  padding:8px;
+  gap:6px;
+  z-index:10;
+}
+
+.arb-search-box input{
+  border:none;
+  outline:none;
+  padding:6px 10px;
+  font-size:14px;
+}
+
+.arb-search-box button{
+  border:none;
+  background:none;
+  cursor:pointer;
+  color:#888;
+}
+
+/* Login page */
+.login-page{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#f4f6f9;
+}
+
+.login-card{
+  background:#fff;
+  padding:40px;
+  border-radius:15px;
+  box-shadow:0 4px 20px rgba(0,0,0,.06);
+  width:100%;
+  max-width:360px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.login-card h2{
+  margin-bottom:10px;
+  color:#111827;
+}
+
+.login-card input{
+  padding:12px 14px;
+  border:1px solid #e5e7eb;
+  border-radius:8px;
+  font-size:14px;
+}
+
+.login-card input:focus{
+  outline:none;
+  border-color:#2563eb;
+}
+
+.login-card button{
+  background:#2563eb;
+  color:#fff;
+  border:none;
+  padding:12px;
+  border-radius:8px;
+  font-size:15px;
+  cursor:pointer;
+  margin-top:6px;
+}
+
+.login-card button:hover{
+  background:#1d4ed8;
+}
+
+.login-error{
+  color:#dc2626;
+  font-size:13px;
+}
+
+/* Generic admin forms (ProductForm, etc.) */
+.admin-content form{
+  background:#fff;
+  padding:25px;
+  border-radius:15px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  max-width:500px;
+}
+
+.admin-content form input[type="text"],
+.admin-content form input[type="number"],
+.admin-content form input[type="email"],
+.admin-content form input[type="password"]{
+  padding:12px 14px;
+  border:1px solid #e5e7eb;
+  border-radius:8px;
+  font-size:14px;
+}
+
+.admin-content form input:focus{
+  outline:none;
+  border-color:#2563eb;
+}
+
+.admin-content form label{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:14px;
+  color:#374151;
+}
+
+.admin-content form button[type="submit"]{
+  background:#2563eb;
+  color:#fff;
+  border:none;
+  padding:12px;
+  border-radius:8px;
+  font-size:15px;
+  cursor:pointer;
+}
+
+.admin-content form button[type="submit"]:hover{
+  background:#1d4ed8;
+}
+
+.admin-content h1{
+  margin-bottom:20px;
+  color:#111827;
+}
+
+.recent-box{
+  background:white;
+  padding:25px;
+  border-radius:15px;
+  margin-top:20px;
+}
+
+.recent-box ul{
+  list-style:none;
+  padding:0;
+  margin-top:10px;
+}
+
+.recent-box li{
+  padding:10px 0;
+  border-bottom:1px solid #eee;
+  color:#374151;
+}
+
+/* ===== Products page ===== */
+
+.admin-page-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.admin-page-header h1{
+  margin:0;
+  color:#111827;
+}
+
+.admin-page-header .btn-add{
+  margin-bottom:0;
+}
+
+.admin-status{
+  padding:30px;
+  text-align:center;
+  color:#6b7280;
+  background:#fff;
+  border-radius:12px;
+}
+
+.admin-status-error{
+  color:#dc2626;
+}
+
+.admin-table-empty{
+  text-align:center;
+  color:#9ca3af;
+  padding:30px !important;
+}
+
+.admin-table-thumb{
+  width:48px;
+  height:48px;
+  object-fit:cover;
+  border-radius:6px;
+  background:#f4f6f9;
+}
+
+.admin-price-cell{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.admin-price-current{
+  font-weight:600;
+  color:#111827;
+}
+
+.admin-price-old{
+  font-size:12px;
+  color:#9ca3af;
+  text-decoration:line-through;
+}
+
+.admin-badge{
+  display:inline-block;
+  padding:4px 10px;
+  border-radius:6px;
+  font-size:11px;
+  font-weight:600;
+  text-transform:uppercase;
+  color:#fff;
+}
+
+.admin-badge-discount{
+  background:#dc2626;
+}
+
+.admin-badge-new{
+  background:#16a34a;
+}
+
+.admin-pill{
+  display:inline-block;
+  padding:4px 10px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:500;
+}
+
+.admin-pill-yes{
+  background:#dbeafe;
+  color:#2563eb;
+}
+
+.admin-pill-no{
+  background:#f3f4f6;
+  color:#6b7280;
+}
+
+.admin-actions{
+  display:flex;
+  gap:8px;
+}
+
+.admin-edit-btn{
+  background:#f4f6f9;
+  color:#374151;
+  text-decoration:none;
+  padding:6px 14px;
+  border-radius:6px;
+  font-size:13px;
+  transition:background .2s ease;
+}
+
+.admin-edit-btn:hover{
+  background:#e5e7eb;
+}
+
+.admin-delete-btn{
+  background:#fef2f2;
+  color:#dc2626;
+  border:none;
+  padding:6px 14px;
+  border-radius:6px;
+  font-size:13px;
+  cursor:pointer;
+  transition:background .2s ease;
+}
+
+.admin-delete-btn:hover{
+  background:#fee2e2;
+}
+
+.admin-delete-btn:disabled{
+  opacity:0.6;
+  cursor:not-allowed;
+}
+
+/* ===== Product Add/Edit form ===== */
+
+.admin-form-row{
+  display:flex;
+  gap:16px;
+}
+
+.admin-form-row .admin-form-field{
+  flex:1;
+}
+
+.admin-form-field{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.admin-form-field label{
+  font-size:13px;
+  color:#6b7280;
+  font-weight:500;
+}
+
+.admin-form-preview{
+  margin-top:8px;
+  width:100%;
+  max-height:120px;
+  object-fit:cover;
+  border-radius:8px;
+  border:1px solid #e5e7eb;
+}
+
+.admin-checkbox{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:14px;
+  color:#374151;
+  cursor:pointer;
+}
+
+.admin-form-message{
+  font-size:13px;
+  color:#dc2626;
+  margin-top:4px;
 }
