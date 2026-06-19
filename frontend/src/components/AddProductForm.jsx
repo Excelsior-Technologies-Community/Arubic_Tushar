@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../assets/CSS/AddProductForm.css";
+import "../assets/css/AddProductForm.css";
 
 const API_URL = "http://localhost:5000/api/products";
 

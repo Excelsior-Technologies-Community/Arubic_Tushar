@@ -7,6 +7,7 @@ import FeaturedProducts from "./components/FeaturedProducts";
 import Products from "./admin/pages/Products";
 import ProductForm from "./admin/pages/ProductForm";
 import CallToAction from "./components/CallToAction";
+import ProductCatalog from "./components/ProductCatalog";
 
 
 
@@ -21,6 +22,7 @@ function HomePage() {
       <HeroSection />
       <FeaturedProducts />
       <CallToAction />
+      <ProductCatalog />
     </>
   )
 }

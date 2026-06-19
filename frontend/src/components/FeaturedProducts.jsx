@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../assets/CSS/FeaturedProducts.css";
+import "../assets/css/FeaturedProducts.css";
 
 const API_URL = "http://localhost:5000/api/products/featured";
 

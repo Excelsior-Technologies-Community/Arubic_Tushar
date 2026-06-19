@@ -1,0 +1,268 @@
+.pc-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.pc-status {
+  text-align: center;
+  padding: 40px;
+  color: #999;
+}
+
+.pc-error {
+  color: #e74c3c;
+}
+
+/* Two column wrapper */
+.pc-wrapper {
+  display: flex;
+  gap: 0;
+  align-items: flex-start;
+}
+
+.pc-col {
+  flex: 1;
+  min-width: 0;
+}
+
+.pc-divider {
+  width: 1px;
+  background-color: #e5e7eb;
+  margin: 0 40px;
+  align-self: stretch;
+}
+
+/* Column header */
+.pc-col-header {
+  margin-bottom: 28px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid #e5e7eb;
+  position: relative;
+}
+
+.pc-col-header::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: #222;
+}
+
+.pc-col-header h2 {
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #222;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.pc-col-header p {
+  font-size: 13px;
+  color: #999;
+  font-style: italic;
+}
+
+/* Stars */
+.pc-stars {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 6px;
+}
+
+.pc-star {
+  font-size: 14px;
+  color: #ddd;
+}
+
+.pc-star-filled {
+  color: #f5a623;
+}
+
+/* Price */
+.pc-price {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pc-price-current {
+  font-size: 15px;
+  font-weight: 600;
+  color: #222;
+}
+
+.pc-price-old {
+  font-size: 13px;
+  color: #aaa;
+  text-decoration: line-through;
+}
+
+/* ===== LEFT — Large Cards Grid (2 cols) ===== */
+.pc-large-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.pc-large-card {
+  cursor: pointer;
+}
+
+.pc-large-img-wrap {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  background: #f5f5f5;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.pc-large-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.4s ease;
+}
+
+.pc-img-main  { opacity: 1; }
+.pc-img-hover { opacity: 0; }
+
+.pc-large-card:hover .pc-img-main  { opacity: 0; }
+.pc-large-card:hover .pc-img-hover { opacity: 1; }
+.pc-small-card:hover .pc-img-main  { opacity: 0; }
+.pc-small-card:hover .pc-img-hover { opacity: 1; }
+
+/* Badge */
+.pc-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 5px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 3px;
+  z-index: 2;
+}
+
+.pc-badge-discount { background-color: #e74c3c; }
+.pc-badge-new      { background-color: #2d8cf0; }
+
+.pc-large-info {
+  padding: 0 4px;
+}
+
+.pc-large-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 6px;
+}
+
+/* ===== RIGHT — Small Cards (2 cols, thumbnail list) ===== */
+.pc-small-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.pc-small-card {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.pc-small-img-wrap {
+  position: relative;
+  width: 90px;
+  height: 120px;
+  flex-shrink: 0;
+  background: #f5f5f5;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.pc-small-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.4s ease;
+}
+
+.pc-small-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.pc-small-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.feature-section {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 60px 50px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 40px;
+  background-color: #f5f6f7 ;
+}
+.feature-content {
+  max-width: 600px;
+  text-align: center;
+}
+.feature-content h1 {
+  font-size: 21px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 10px;
+}
+.feature-content p {
+  font-size: 16px;
+  color: #7a7a7a;
+  line-height: 1.5;
+}
+.feature-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .pc-wrapper {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .pc-divider {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .pc-large-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .pc-small-grid {
+    grid-template-columns: 1fr;
+  }
+}

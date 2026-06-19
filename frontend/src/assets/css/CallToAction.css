@@ -14,6 +14,7 @@
   overflow: hidden;
 }
 
+
 .cta-overlay {
   position: absolute;
   top: 0;
@@ -33,6 +34,7 @@
 .cta-blue {
   color: #3498db;
 }
+
 
 .cta-heading {
   font-size: 56px;
