@@ -184,10 +184,8 @@ export default function Navbar() {
 
           <Link to="/" className="arb-logo"> 
           
-            <div className="arb-logo__text">
-              <span className="arb-logo__a">A</span>RUBIC
-            </div>
-            <div className="arb-logo__sub">Online store template</div>
+                   <img src="https://htmldemo.net/arubic/arubic/img/logo/logo.jpg" alt="" />
+
           </Link>
 
 

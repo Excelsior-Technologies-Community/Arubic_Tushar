@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";import Navbar from "./components/Navbar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import AdminLayout from "./admin/layout/AdminLayout";
 import Dashboard from "./admin/pages/Dashboard";
@@ -8,6 +9,9 @@ import Products from "./admin/pages/Products";
 import ProductForm from "./admin/pages/ProductForm";
 import CallToAction from "./components/CallToAction";
 import ProductCatalog from "./components/ProductCatalog";
+import TestimonialSection from "./components/TestimonialSection";
+import BlogSection from "./components/BlogSection";
+import Footer from "./components/Footer";
 
 
 
@@ -23,6 +27,9 @@ function HomePage() {
       <FeaturedProducts />
       <CallToAction />
       <ProductCatalog />
+      <TestimonialSection />
+      <BlogSection />
+      <Footer />  
     </>
   )
 }
