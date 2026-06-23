@@ -1,0 +1,40 @@
+/* =============================================================
+   BREADCRUMB
+   ============================================================= */
+
+.arb-breadcrumb {
+  background-color: #f5f6f8;
+  border-bottom: 1px solid #ebebeb;
+  padding: 54px 0;
+}
+
+.arb-breadcrumb__nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+}
+
+.arb-breadcrumb__home {
+  color: #999999;
+  text-decoration: none;
+  font-style: normal;
+  transition: color 0.2s ease;
+}
+
+.arb-breadcrumb__home:hover {
+  color: #00bcd4;
+}
+
+.arb-breadcrumb__sep {
+  color: #bbbbbb;
+  font-size: 13px;
+  user-select: none;
+}
+
+.arb-breadcrumb__current {
+  color: #535353;
+  font-style: italic;
+  font-weight: 400;
+}

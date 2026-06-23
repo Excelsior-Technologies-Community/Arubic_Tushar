@@ -14,8 +14,8 @@ export default function Sidebar() {
   return (
     <aside className="sidebar">
       <div className="logo">
-        <h2 className="admin-logo"><span className="arb-logo__a">A</span>RUBIC</h2>
-        <div className="arb-logo__sub">Online store template</div>
+       <img src="https://htmldemo.net/arubic/arubic/img/logo/logo.jpg" alt="" />
+
       </div>
 
       {menu.map((item) => (

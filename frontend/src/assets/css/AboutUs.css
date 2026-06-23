@@ -1,0 +1,350 @@
+/* =============================================================
+   ABOUT PAGE — About.css
+   ============================================================= */
+
+/* ── COMPANY SECTION ──────────────────────────────────────── */
+.arb-company {
+  padding: 90px 0 80px;
+  background: #ffffff;
+}
+
+.arb-company__inner {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.arb-company__img-wrap {
+  flex: 0 0 auto;
+  width: 48%;
+  overflow: hidden;
+}
+
+.arb-company__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: all 0.5s ease-in-out;
+
+}
+.arb-company__img:hover {
+  transform: scale(1.2);
+}
+
+.arb-company__content {
+  flex: 1;
+}
+
+.arb-company__title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #222222;
+  margin-bottom: 22px;
+  font-family: Arial, sans-serif;
+  line-height: 1.2;
+}
+
+.arb-company__text {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #555555;
+  margin-bottom: 16px;
+  font-family: Arial, sans-serif;
+}
+
+.arb-company__text:last-of-type {
+  margin-bottom: 30px;
+}
+
+.arb-company__btn {
+  display: inline-block;
+  background: #222222;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  transition: background 0.22s ease;
+}
+
+.arb-company__btn:hover {
+  background: #00bcd4;
+}
+
+/* ── TEAM SECTION ─────────────────────────────────────────── */
+.arb-team {
+  padding: 80px 0 90px;
+  background: #ffffff;
+}
+
+.arb-team__header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.arb-team__title {
+  font-size: 30px;
+  font-weight: 800;
+  color: #222222;
+  margin-bottom: 14px;
+  font-family: Arial, sans-serif;
+}
+
+.arb-team__subtitle {
+  font-size: 14px;
+  color: #888888;
+  font-family: Arial, sans-serif;
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.arb-team__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.arb-team__card {
+  position: relative;
+  text-align: center;
+}
+
+.arb-team__img-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.arb-team__img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.arb-team__card:hover .arb-team__img {
+  filter: grayscale(100);
+}
+
+
+
+.arb-team__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  /* color: #ffffff; */
+}
+
+.arb-team__card:hover .arb-team__overlay {
+  transform: translateY(0);
+}
+
+.arb-team__social {
+  display: flex;
+  gap: 12px;
+}
+
+.arb-team__social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background: #000;
+  color: #ffffff;
+  border-radius: 50%;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.arb-team__social a:hover {
+  /* background: #00bcd4; */
+  color: #00bcd4;
+}
+
+.arb-team__social svg {
+  width: 15px;
+  height: 15px;
+}
+
+.arb-team__info {
+  padding: 18px 0 10px;
+}
+
+.arb-team__name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 5px;
+  font-family: Arial, sans-serif;
+}
+
+.arb-team__role {
+  font-size: 13px;
+  color: #888888;
+  font-family: Arial, sans-serif;
+}
+
+/* ── TESTIMONIAL SECTION ──────────────────────────────────── */
+.arb-testimonial {
+  background: #333333;
+  padding: 80px 0;
+  position: relative;
+}
+
+.arb-testimonial__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.arb-testimonial__quote-icon {
+  color: rgba(255, 255, 255, 0.12);
+  width: 80px;
+  height: 60px;
+  margin-bottom: 30px;
+}
+
+.arb-testimonial__quote-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.arb-testimonial__track {
+  position: relative;
+  width: 100%;
+  max-width: 760px;
+  min-height: 160px;
+}
+
+.arb-testimonial__slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+}
+
+.arb-testimonial__slide--active {
+  position: relative;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.arb-testimonial__text {
+  font-size: 15px;
+  font-style: italic;
+  color: #cccccc;
+  line-height: 1.9;
+  margin-bottom: 32px;
+  font-family: Arial, sans-serif;
+}
+
+.arb-testimonial__author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.arb-testimonial__avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.arb-testimonial__author-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 4px;
+}
+
+.arb-testimonial__name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+.arb-testimonial__email {
+  font-size: 13px;
+  color: #888888;
+  font-family: Arial, sans-serif;
+}
+
+.arb-testimonial__dots {
+  display: flex;
+  gap: 8px;
+  margin-top: 36px;
+}
+
+.arb-testimonial__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #555555;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.22s ease;
+}
+
+.arb-testimonial__dot--active {
+  background: #ffffff;
+}
+
+.arb-testimonial__dot:hover {
+  background: #aaaaaa;
+}
+
+@media (max-width: 1024px) {
+  .arb-company__img-wrap { width: 45%; }
+  .arb-company__inner { gap: 40px; }
+  .arb-team__img { height: 300px; }
+}
+
+@media (max-width: 768px) {
+  .arb-company { padding: 60px 0; }
+  .arb-company__inner { flex-direction: column; gap: 30px; }
+  .arb-company__img-wrap { width: 100%; }
+  .arb-company__title { font-size: 26px; }
+
+  .arb-team { padding: 60px 0; }
+  .arb-team__grid {
+    grid-template-columns: 1fr;
+    max-width: 380px;
+    margin: 0 auto;
+    gap: 40px;
+  }
+  .arb-team__img { height: 340px; }
+
+  .arb-testimonial { padding: 60px 0; }
+  .arb-testimonial__text { font-size: 14px; }
+}
+
+@media (max-width: 480px) {
+  .arb-company__title { font-size: 22px; }
+  .arb-team__title { font-size: 24px; }
+}
