@@ -1,0 +1,671 @@
+/* =============================================================
+   WOMEN PAGE — Women.css
+   ============================================================= */
+
+.arb-wm-page {
+  background: #ffffff;
+  min-height: 100vh;
+}
+
+/* ── LAYOUT ───────────────────────────────────────────────── */
+.arb-wm-layout {
+  display: flex;
+  gap: 40px;
+  padding-top: 50px;
+  padding-bottom: 70px;
+  align-items: flex-start;
+}
+
+/* ── SIDEBAR ──────────────────────────────────────────────── */
+.arb-wm-sidebar {
+  flex: 0 0 260px;
+  min-width: 0;
+}
+
+.arb-wm-sb-section {
+  margin-bottom: 36px;
+}
+
+.arb-wm-sb-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #222;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-family: Arial, sans-serif;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #222;
+  margin-bottom: 0;
+}
+
+/* Category accordion */
+.arb-wm-sb-cats {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.arb-wm-sb-cat-item {
+  border-bottom: 1px solid #ebebeb;
+}
+
+.arb-wm-sb-cat-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+}
+
+.arb-wm-sb-cat-label {
+  font-size: 13px;
+  color: #555;
+  font-family: Arial, sans-serif;
+  font-style: italic;
+}
+
+.arb-wm-sb-cat-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #aaa;
+  line-height: 1;
+  padding: 0 4px;
+  transition: color 0.2s;
+}
+
+.arb-wm-sb-cat-toggle:hover {
+  color: #00bcd4;
+}
+
+.arb-wm-sb-sub {
+  list-style: none;
+  padding: 0 0 10px 14px;
+  margin: 0;
+}
+
+.arb-wm-sb-sub li a {
+  display: block;
+  font-size: 12px;
+  color: #888;
+  padding: 4px 0;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  transition: color 0.2s;
+}
+
+.arb-wm-sb-sub li a:hover {
+  color: #00bcd4;
+}
+
+/* Clear all button */
+.arb-wm-sb-clear {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #444;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 6px 14px;
+  margin: 14px 0 10px;
+  font-family: Arial, sans-serif;
+  transition: background 0.2s;
+}
+
+.arb-wm-sb-clear:hover {
+  background: #00bcd4;
+}
+
+/* Filter labels */
+.arb-wm-sb-filter-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #222;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin: 18px 0 10px;
+  font-family: Arial, sans-serif;
+}
+
+/* Checkboxes */
+.arb-wm-sb-check,
+.arb-wm-sb-radio {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.arb-wm-sb-check input,
+.arb-wm-sb-radio input {
+  accent-color: #00bcd4;
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+}
+
+.arb-wm-sb-check span,
+.arb-wm-sb-radio span {
+  font-size: 13px;
+  color: #666;
+  font-family: Arial, sans-serif;
+  font-style: italic;
+}
+
+/* ── MAIN CONTENT ─────────────────────────────────────────── */
+.arb-wm-main {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ── BANNER ───────────────────────────────────────────────── */
+.arb-wm-banner {
+  position: relative;
+  background: #f0f4f8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  min-height: 280px;
+  margin-bottom: 30px;
+}
+
+.arb-wm-banner__text {
+  padding: 40px 50px;
+  z-index: 1;
+  position: relative;
+}
+
+.arb-wm-banner__sub {
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+  font-family: Arial, sans-serif;
+  margin-bottom: 6px;
+}
+
+.arb-wm-banner__title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #222;
+  font-family: Arial, sans-serif;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.arb-wm-banner__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #222;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  transition: color 0.2s;
+}
+
+.arb-wm-banner__link:hover {
+  color: #00bcd4;
+}
+
+.arb-wm-banner__arrow {
+  font-size: 16px;
+}
+
+.arb-wm-banner__img {
+  height: 280px;
+  width: auto;
+  object-fit: cover;
+  object-position: top center;
+  flex-shrink: 0;
+}
+
+/* ── TOOLBAR ──────────────────────────────────────────────── */
+.arb-wm-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+  margin-bottom: 30px;
+  gap: 16px;
+}
+
+.arb-wm-toolbar__left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.arb-wm-view-btn {
+  background: none;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  padding: 7px 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  transition: all 0.2s;
+}
+
+.arb-wm-view-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.arb-wm-view-btn--active,
+.arb-wm-view-btn:hover {
+  background: #222;
+  border-color: #222;
+  color: #fff;
+}
+
+.arb-wm-toolbar__count {
+  font-size: 13px;
+  font-style: italic;
+  color: #888;
+  font-family: Arial, sans-serif;
+  margin-left: 6px;
+}
+
+.arb-wm-toolbar__count strong {
+  font-style: normal;
+  color: #333;
+}
+
+.arb-wm-toolbar__right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.arb-wm-toolbar__sort-label {
+  font-size: 13px;
+  color: #555;
+  font-family: Arial, sans-serif;
+}
+
+.arb-wm-toolbar__sort {
+  border: 1px solid #ddd;
+  padding: 7px 30px 7px 12px;
+  font-size: 13px;
+  color: #555;
+  background: #fff;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  outline: none;
+  min-width: 180px;
+  appearance: auto;
+}
+
+/* ── PRODUCTS GRID / LIST ─────────────────────────────────── */
+.arb-wm-products--grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.arb-wm-products--list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.arb-wm-no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 0;
+  font-size: 14px;
+  color: #888;
+  font-family: Arial, sans-serif;
+}
+
+/* ── PRODUCT CARD ─────────────────────────────────────────── */
+.arb-wm-card {
+  position: relative;
+}
+
+.arb-wm-card--list {
+  display: flex;
+  gap: 24px;
+  border-bottom: 1px solid #ebebeb;
+  padding-bottom: 24px;
+}
+
+.arb-wm-card--list .arb-wm-card__img-wrap {
+  flex: 0 0 200px;
+}
+
+.arb-wm-card--list .arb-wm-card__info {
+  padding-top: 8px;
+}
+
+.arb-wm-card__img-wrap {
+  position: relative;
+  overflow: hidden;
+  background: #f5f5f5;
+  margin-bottom: 14px;
+}
+
+.arb-wm-card__img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.arb-wm-card--list .arb-wm-card__img {
+  height: 200px;
+}
+
+.arb-wm-card:hover .arb-wm-card__img {
+  transform: scale(1.04);
+}
+
+/* Badge */
+.arb-wm-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 9px;
+  border-radius: 2px;
+  font-family: Arial, sans-serif;
+  letter-spacing: 0.3px;
+}
+
+.arb-wm-badge--new {
+  background: #00bcd4;
+  color: #fff;
+}
+
+.arb-wm-badge--sale {
+  background: #e84545;
+  color: #fff;
+}
+
+/* Hover action buttons */
+.arb-wm-card__actions {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 3;
+}
+
+.arb-wm-card__action-btn {
+  width: 36px;
+  height: 36px;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  transition: background 0.2s, color 0.2s;
+}
+
+.arb-wm-card__action-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.arb-wm-card__action-btn:hover {
+  background: #00bcd4;
+  color: #fff;
+}
+
+/* Card info */
+.arb-wm-card__name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 6px;
+  font-family: Arial, sans-serif;
+}
+
+.arb-wm-card__name a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.arb-wm-card__name a:hover {
+  color: #00bcd4;
+}
+
+/* Stars */
+.arb-wm-stars {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 8px;
+}
+
+.arb-wm-star {
+  width: 13px;
+  height: 13px;
+  fill: #ddd;
+}
+
+.arb-wm-star--filled {
+  fill: #f5a623;
+}
+
+/* Price */
+.arb-wm-card__price {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.arb-wm-card__price-now {
+  font-size: 15px;
+  font-weight: 700;
+  color: #222;
+  font-family: Arial, sans-serif;
+}
+
+.arb-wm-card__price-old {
+  font-size: 13px;
+  color: #aaa;
+  text-decoration: line-through;
+  font-family: Arial, sans-serif;
+}
+
+.arb-wm-card__desc {
+  font-size: 13px;
+  color: #777;
+  line-height: 1.7;
+  margin-top: 10px;
+  font-family: Arial, sans-serif;
+}
+
+/* ── PAGINATION ───────────────────────────────────────────── */
+.arb-wm-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 30px;
+  border-top: 1px solid #ebebeb;
+  margin-top: 40px;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.arb-wm-pagination__info {
+  font-size: 13px;
+  font-style: italic;
+  color: #00bcd4;
+  font-family: Arial, sans-serif;
+}
+
+.arb-wm-pagination__pages {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.arb-wm-pagination__btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  color: #555;
+  padding: 6px 10px;
+  font-family: Arial, sans-serif;
+  transition: color 0.2s;
+}
+
+.arb-wm-pagination__btn:hover:not(:disabled) {
+  color: #00bcd4;
+}
+
+.arb-wm-pagination__btn:disabled {
+  color: #ccc;
+  cursor: default;
+}
+
+.arb-wm-pagination__num {
+  background: none;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  font-size: 13px;
+  color: #555;
+  width: 34px;
+  height: 34px;
+  font-family: Arial, sans-serif;
+  transition: all 0.2s;
+}
+
+.arb-wm-pagination__num:hover {
+  background: #222;
+  border-color: #222;
+  color: #fff;
+}
+
+.arb-wm-pagination__num--active {
+  background: #222;
+  border-color: #222;
+  color: #fff;
+}
+
+/* ── RESPONSIVE ───────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .arb-wm-products--grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .arb-wm-layout {
+    flex-direction: column;
+  }
+  .arb-wm-sidebar {
+    flex: none;
+    width: 100%;
+  }
+  .arb-wm-banner__img {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .arb-wm-products--grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .arb-wm-card__img {
+    height: 220px;
+  }
+  .arb-wm-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 400px) {
+  .arb-wm-products--grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── SKELETON LOADER ──────────────────────────────────────── */
+@keyframes arbShimmer {
+  0%   { background-position: -600px 0; }
+  100% { background-position:  600px 0; }
+}
+
+.arb-wm-skeleton {
+  background: #fff;
+}
+
+.arb-wm-skeleton__img {
+  width: 100%;
+  height: 320px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 600px 100%;
+  animation: arbShimmer 1.4s infinite;
+  margin-bottom: 14px;
+}
+
+.arb-wm-skeleton__line {
+  height: 13px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 600px 100%;
+  animation: arbShimmer 1.4s infinite;
+  margin-bottom: 10px;
+}
+
+.arb-wm-skeleton__line--title { width: 80%; }
+.arb-wm-skeleton__line--short { width: 50%; }
+.arb-wm-skeleton__line--price { width: 40%; }
+
+/* ── ERROR STATE ──────────────────────────────────────────── */
+.arb-wm-error {
+  background: #fff3f3;
+  border: 1px solid #ffcdd2;
+  border-left: 4px solid #e84545;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  border-radius: 2px;
+}
+
+.arb-wm-error p {
+  font-size: 13px;
+  color: #c62828;
+  font-family: Arial, sans-serif;
+}
+
+/* Sub button (sidebar) */
+.arb-wm-sb-sub-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  color: #888;
+  padding: 4px 0;
+  font-family: Arial, sans-serif;
+  text-align: left;
+  transition: color 0.2s;
+}
+
+.arb-wm-sb-sub-btn:hover {
+  color: #00bcd4;
+}

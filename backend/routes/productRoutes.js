@@ -7,13 +7,17 @@ const {
   getAllProducts,
   getProductById,
   updateProduct,
-  deleteProduct
+  deleteProduct,
+  getFilters,          // new — sidebar filter options
 } = require('../controllers/productController');
 
 // GET featured products (for the React Featured Products section)
 router.get('/featured', getFeaturedProducts);
 
-// GET all products (for admin table view)
+// GET sidebar filter options (categories, compositions, styles, properties)
+router.get('/filters', getFilters);
+
+// GET all products — supports ?category=&composition=&style=&property=&price_min=&price_max=&sort=&page=&limit=
 router.get('/', getAllProducts);
 
 // GET single product (for edit form pre-fill)

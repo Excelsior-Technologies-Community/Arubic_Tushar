@@ -13,6 +13,7 @@ import TestimonialSection from "./components/TestimonialSection";
 import BlogSection from "./components/BlogSection";
 import Footer from "./components/Footer";
 import AboutUs from "./components/Pages/AboutUs";
+import Women from "./components/Pages/Women";
 
 
 
@@ -44,6 +45,7 @@ function App() {
 
         <Route path="/" element={<HomePage />} />
         <Route path="/about"   element={<><Navbar /><AboutUs /><Footer /></>} />
+        <Route path="/shop"   element={<><Navbar /><Women /><Footer /></>} />
 
 
        {/* Admin panel (with sidebar + header) */}

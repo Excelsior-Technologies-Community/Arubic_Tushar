@@ -2,6 +2,14 @@ import React, { useEffect, useState } from "react";
 import "../assets/css/FeaturedProducts.css";
 
 const API_URL = "http://localhost:5000/api/products/featured";
+const SERVER_URL = "http://localhost:5000";
+const PLACEHOLDER_IMAGE = "https://placehold.co/400x480?text=No+Image";
+
+const getImageUrl = (imagePath) => {
+  if (!imagePath) return PLACEHOLDER_IMAGE;
+  if (imagePath.startsWith("http")) return imagePath;
+  return `${SERVER_URL}${imagePath.startsWith("/") ? imagePath : `/uploads/${imagePath}`}`;
+};
 
 const FeaturedProducts = () => {
   const [products, setProducts] = useState([]);
@@ -15,7 +23,7 @@ const FeaturedProducts = () => {
         const data = await res.json();
 
         if (data.success) {
-          setProducts(data.products);
+          setProducts(Array.isArray(data.data) ? data.data : []);
         } else {
           setError("Failed to load products");
         }
@@ -54,17 +62,32 @@ const FeaturedProducts = () => {
 };
 
 const ProductCard = ({ product }) => {
-  const { title, price, old_price, image1, image2, badge } = product;
+  const title = product.name || product.title || "Product";
+  const price = Number(product.price || 0);
+  const oldPrice = product.old_price ? Number(product.old_price) : null;
+  const mainImage = getImageUrl(product.img_url || product.image1);
+  const hoverImage = getImageUrl(product.image2 || product.img_url || product.image1);
+  const badge = product.badge;
 
   return (
     <div className="fp-card">
       <div className="fp-image-wrap">
-        <img src={`http://localhost:5000${image1}`} alt={title} className="fp-img fp-img-main" />
-        <img src={`http://localhost:5000${image2}`} alt={title} className="fp-img fp-img-hover" />
+        <img
+          src={mainImage}
+          alt={title}
+          className="fp-img fp-img-main"
+          onError={(e) => { e.currentTarget.src = PLACEHOLDER_IMAGE; }}
+        />
+        <img
+          src={hoverImage}
+          alt={title}
+          className="fp-img fp-img-hover"
+          onError={(e) => { e.currentTarget.src = PLACEHOLDER_IMAGE; }}
+        />
 
         {badge && (
-          <span className={`fp-badge ${badge.type === "discount" ? "fp-badge-discount" : "fp-badge-new"}`}>
-            {badge.label}
+          <span className={`fp-badge ${product.badge_type === "discount" ? "fp-badge-discount" : "fp-badge-new"}`}>
+            {badge}
           </span>
         )}
 
@@ -79,7 +102,7 @@ const ProductCard = ({ product }) => {
         <h4 className="fp-title">{title}</h4>
         <div className="fp-price">
           <span className="fp-price-current">${price.toFixed(2)}</span>
-          {old_price && <span className="fp-price-old">${old_price.toFixed(2)}</span>}
+          {oldPrice && <span className="fp-price-old">${oldPrice.toFixed(2)}</span>}
         </div>
       </div>
     </div>
